@@ -6,7 +6,7 @@ const ColorModeSwitch = () => {
   const { toggleColorMode, colorMode } = useColorMode();
   return (
     <div>
-      <HStack justifyContent={"space-between"} padding={"10px"}>
+      <HStack>
         <IconButton onClick={toggleColorMode} variant={"outline"} size={"sm"}>
           {colorMode === "dark" ? <LuMoon /> : <LuSun />}
         </IconButton>

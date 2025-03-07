@@ -8,7 +8,7 @@ interface Props {
 const GameCardContainer = ({ children }: Props) => {
   return (
     <Box
-      width="300px" // ✅ Ensures all cards have the same width
+      width="100%" // ✅ Ensures all cards have the same width
       height="100%" // ✅ Makes sure all cards stretch to the same height
       borderRadius={10}
       overflow="hidden"

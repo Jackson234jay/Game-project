@@ -17,15 +17,22 @@ interface Props {
 
 const GameCard = ({ game }: Props) => {
   return (
-    <Card.Root maxW={"300px"} borderRadius={10} overflow="hidden">
+    <Card.Root
+      maxW="300px"
+      borderRadius={10}
+      overflow="hidden"
+      height="100%" // ✅ Ensures all cards have the same height
+      display="flex"
+      flexDirection="column"
+    >
       <Image src={getCroppedImageUrl(game.background_image)} />
-      <CardHeader>
-        <Text fontSize="2xl" fontWeight="bold">
-          {game.name}
-        </Text>
-      </CardHeader>
-      <CardBody>
-        <HStack justifyContent="space-between">
+      <CardBody display="flex" flexDirection="column" flex="1">
+        <CardHeader padding={0}>
+          <Text fontSize="2xl" fontWeight="bold">
+            {game.name}
+          </Text>
+        </CardHeader>
+        <HStack justifyContent="space-between" marginTop="auto">
           <PlatformIconList
             platforms={game.parent_platforms.map((p) => p.platform)}
           />

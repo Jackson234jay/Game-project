@@ -1,4 +1,4 @@
-import { Game } from "@/hooks/useGames";
+import { Game } from "../hooks/useGames";
 import {
   Card,
   CardBody,
@@ -9,7 +9,7 @@ import {
 } from "@chakra-ui/react";
 import PlatformIconList from "./PlatformIconList";
 import CriticScore from "./CriticScore";
-import getCroppedImageUrl from "@/services/image-url";
+import getCroppedImageUrl from "../services/image-url";
 
 interface Props {
   game: Game;
@@ -17,7 +17,7 @@ interface Props {
 
 const GameCard = ({ game }: Props) => {
   return (
-    <Card.Root
+    <Card
       maxW="300px"
       borderRadius={10}
       overflow="hidden"
@@ -39,7 +39,7 @@ const GameCard = ({ game }: Props) => {
           <CriticScore score={game.metacritic} />
         </HStack>
       </CardBody>
-    </Card.Root>
+    </Card>
   );
 };
 

@@ -1,18 +1,17 @@
-import { HStack, IconButton, Text } from "@chakra-ui/react";
-import { useColorMode } from "@/components/ui/color-mode";
-import { LuMoon, LuSun } from "react-icons/lu";
+import { HStack, Switch, Text } from "@chakra-ui/react";
+import { useColorMode } from "@chakra-ui/react";
 
 const ColorModeSwitch = () => {
-  const { toggleColorMode, colorMode } = useColorMode();
+  const { colorMode, toggleColorMode } = useColorMode();
   return (
-    <div>
-      <HStack>
-        <IconButton onClick={toggleColorMode} variant={"outline"} size={"sm"}>
-          {colorMode === "dark" ? <LuMoon /> : <LuSun />}
-        </IconButton>
-        <Text>{colorMode === "dark" ? "Dark Mode" : "Light Mode"}</Text>
-      </HStack>
-    </div>
+    <HStack>
+      <Switch
+        colorScheme="green"
+        isChecked={colorMode === "dark"}
+        onChange={toggleColorMode}
+      />
+      <Text>{colorMode === "dark" ? "Dark Mode" : "Light Mode"}</Text>
+    </HStack>
   );
 };
 

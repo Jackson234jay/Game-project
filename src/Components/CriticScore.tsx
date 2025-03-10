@@ -9,7 +9,7 @@ const CriticScore = ({ score }: Props) => {
   return (
     <Badge
       size={"sm"}
-      colorPalette={color}
+      colorScheme={color}
       width={"max-content"}
       fontSize={"14px"}
       paddingX={2}

@@ -27,17 +27,21 @@ const GameCard = ({ game }: Props) => {
     >
       <Image src={getCroppedImageUrl(game.background_image)} />
       <CardBody display="flex" flexDirection="column" flex="1">
-        <CardHeader padding={0}>
-          <Text fontSize="2xl" fontWeight="bold">
-            {game.name}
-          </Text>
-        </CardHeader>
-        <HStack justifyContent="space-between" marginTop="auto">
+        <HStack
+          justifyContent="space-between"
+          marginTop="auto"
+          marginBottom={3}
+        >
           <PlatformIconList
             platforms={game.parent_platforms.map((p) => p.platform)}
           />
           <CriticScore score={game.metacritic} />
         </HStack>
+        <CardHeader padding={0}>
+          <Text fontSize="2xl" fontWeight="bold">
+            {game.name}
+          </Text>
+        </CardHeader>
       </CardBody>
     </Card>
   );
